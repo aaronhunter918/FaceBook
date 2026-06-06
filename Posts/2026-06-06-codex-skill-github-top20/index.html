@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Codex Skill 熱門專案 TOP20</title>
+  <meta name="description" content="整理過去一週 GitHub 上與 Codex Skill、Agent Skill、Codex plugin、Codex automation 相關且仍有更新的熱門 Repository，依 Stars 排序列出本週可驗證名單。">
+  <meta property="og:title" content="GitHub Codex Skill 熱門專案 TOP20">
+  <meta property="og:description" content="整理過去一週 GitHub 上與 Codex Skill、Agent Skill、Codex plugin、Codex automation 相關且仍有更新的熱門 Repository，依 Stars 排序列出本週可驗證名單。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-06-06-codex-skill-github-top20/">
+  <meta property="og:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-06-06-codex-skill-github-top20/preview.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --ink: #172033;
+      --muted: #617089;
+      --panel: #ffffff;
+      --line: #d7deea;
+      --blue: #1f6feb;
+      --blue-dark: #124ba0;
+      --cyan: #0f9fba;
+      --mint: #28b487;
+      --shadow: 0 22px 60px rgba(20, 38, 70, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    a { color: var(--blue-dark); }
+    img { display: block; max-width: 100%; }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(215, 222, 234, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 10px 24px rgba(31, 111, 235, 0.26);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--blue-dark);
+      background: #e9f1ff;
+      outline: none;
+    }
+
+    .hero {
+      padding: 58px 0 34px;
+      color: #fff;
+      background: #172033;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: #bfefff;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--mint);
+      box-shadow: 0 0 0 6px rgba(40, 180, 135, 0.14);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: #d9e8f6;
+      font-size: 1.08rem;
+    }
+
+    .hero-image {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image img {
+      width: 100%;
+      aspect-ratio: 1200 / 630;
+      object-fit: cover;
+    }
+
+    main { padding: 38px 0 64px; }
+    article { display: grid; gap: 26px; }
+
+    section {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 14px 36px rgba(20, 38, 70, 0.07);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 1.3rem; }
+    li + li { margin-top: 6px; }
+
+    .meta-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7f9fc;
+    }
+
+    .meta-list strong {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1120px;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      color: #fff;
+      background: #172033;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    td:nth-child(1),
+    td:nth-child(3),
+    td:nth-child(4) {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    td:nth-child(2) {
+      min-width: 210px;
+      overflow-wrap: anywhere;
+      font-weight: 800;
+    }
+
+    td:nth-child(6) {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer a {
+      color: var(--blue-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero-grid,
+      .meta-list {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 20px; }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 24px, 1080px); }
+      section { padding: 18px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="主要導覽">
+      <a class="brand" href="../../" aria-label="回到首頁">
+        <span class="brand-mark">AH</span>
+        <span>Aaron Hunter</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../">首頁</a>
+        <a href="#ranking">TOP20</a>
+        <a href="https://github.com/aaronhunter918/FaceBook">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">GitHub Repository Weekly</p>
+        <h1>GitHub Codex Skill 熱門專案 TOP20</h1>
+        <p class="hero-copy">這份整理聚焦過去 7 天仍有更新、且與 Codex Skill、Agent Skill、Codex plugin、Codex automation 明確相關的 GitHub Repository，依 Stars 排序，方便 MIS / 技術人員先看真正還在動的項目。</p>
+      </div>
+      <div class="hero-image">
+        <img src="./preview.png" alt="Codex Skill TOP20 預覽圖">
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <article>
+      <section>
+        <h2>前言</h2>
+        <p>這週我先用 Anysearch skill 搜尋 GitHub Repository，再逐一回 GitHub 頁面確認 stars、forks、主要語言、description 與最近 commit 日期。實際做完會發現，不少看起來很紅的 skill / plugin repo，這週其實沒有更新；如果硬塞進榜單，只會把「熱門」跟「本週仍在推進」混在一起。</p>
+        <p>因此本篇採保守策略，只列出過去 7 天內仍有更新，且和 Codex Skill、Codex agents、Codex plugin、Codex automation 關聯明確的項目。排序依 GitHub Stars 顯示值由高到低，不代表安全性、成熟度或企業環境可直接導入。</p>
+      </section>
+
+      <section>
+        <h2>搜尋條件</h2>
+        <ul class="meta-list">
+          <li><strong>資料整理日期</strong>2026-06-06</li>
+          <li><strong>搜尋時間範圍</strong>2026-05-30 至 2026-06-06，過去 7 天內有 push / commit</li>
+          <li><strong>排序依據</strong>GitHub Stars 由高到低</li>
+          <li><strong>資料來源</strong>Anysearch 搜尋結果與 GitHub Repository / Commits 頁面可驗證資料</li>
+        </ul>
+        <p class="note">搜尋關鍵字涵蓋 Codex skill、Codex skills、OpenAI Codex skill、Agent skill、Codex agents、Codex plugin、Codex automation。GitHub 專案語言保留原始欄位，不把繁體中文當成 repo 語言條件。</p>
+      </section>
+
+      <section id="ranking">
+        <h2>TOP20 排名表格</h2>
+        <div class="table-wrap" role="region" aria-label="GitHub Codex Skill 熱門專案 TOP20" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>專案</th>
+                <th>Stars</th>
+                <th>Forks</th>
+                <th>語言</th>
+                <th>最近 Push</th>
+                <th>原始描述</th>
+                <th>功能簡介</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>209k</td><td>32k</td><td>未確認</td><td>2026-06-05</td><td>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</td><td>大型 agent harness 生態，整合 skills、plugins、agents 與 memory，屬於這週最明顯仍在高頻更新的 Codex 相關專案。</td></tr>
+              <tr><td>2</td><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>89.1k</td><td>13.1k</td><td>Rust</td><td>2026-06-06</td><td>Lightweight coding agent that runs in your terminal</td><td>OpenAI Codex CLI 本體，本週 commit 明確涉及 skills、plugins、Windows sandbox 與 goal/runtime 調整，是整個技能生態的基礎入口。</td></tr>
+              <tr><td>3</td><td><a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a></td><td>58.1k</td><td>6.6k</td><td>TypeScript</td><td>2026-06-03</td><td>Local-first, open-source Claude Design alternative. Native desktop app. 259+ Skills, design systems, previews and exports for Claude Code / Codex / Cursor / OpenCode and more.</td><td>設計與內容產出導向的大型本機優先工具，強調多技能、多樣板與跨 CLI 工作流。</td></tr>
+              <tr><td>4</td><td><a href="https://github.com/sickn33/antigravity-awesome-skills">sickn33/antigravity-awesome-skills</a></td><td>39.5k</td><td>6.4k</td><td>未確認</td><td>2026-06-02</td><td>Installable GitHub library of 1,500+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more.</td><td>大型可安裝技能庫，重點在 bundle、workflow、plugin-safe distribution 與多工具相容。</td></tr>
+              <tr><td>5</td><td><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></td><td>19.8k</td><td>1.5k</td><td>TypeScript</td><td>2026-06-05</td><td>Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more</td><td>工程導向 plugin，最近幾天仍在高頻釋出版號與修正使用體驗，屬於成熟度較高的 Codex plugin 類型。</td></tr>
+              <tr><td>6</td><td><a href="https://github.com/alirezarezvani/claude-skills">alirezarezvani/claude-skills</a></td><td>17.2k</td><td>2.4k</td><td>Python</td><td>2026-06-03</td><td>337 Claude Code skills & agent skills & plugins for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents.</td><td>跨工具 skills、agents、commands 與 plugin 集合，這週仍在同步 Codex skill links 與新增工作流技能。</td></tr>
+              <tr><td>7</td><td><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></td><td>2.8k</td><td>172</td><td>CSS</td><td>2026-06-04</td><td>Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</td><td>偏前端設計品質控制的 skill，主打減少 AI 生成介面的制式感，這週仍持續更新主題、README 與安裝細節。</td></tr>
+              <tr><td>8</td><td><a href="https://github.com/openai/plugins">openai/plugins</a></td><td>1.4k</td><td>219</td><td>JavaScript</td><td>2026-06-03</td><td>OpenAI Plugins</td><td>OpenAI 官方 plugin 範例與清單，本週 commit 直接出現 skill metadata、plugin patch version 與多個 plugin bundle 更新。</td></tr>
+              <tr><td>9</td><td><a href="https://github.com/hashgraph-online/awesome-codex-plugins">hashgraph-online/awesome-codex-plugins</a></td><td>391</td><td>138</td><td>Python</td><td>2026-06-04</td><td>A curated list of awesome OpenAI Codex plugins, skills, and resources. The #1 Codex Marketplace.</td><td>偏 marketplace / curated registry 型專案，最近幾天仍持續收錄新 plugin 並同步 README 與 artifacts。</td></tr>
+              <tr><td>10</td><td><a href="https://github.com/vltansky/codex-automations">vltansky/codex-automations</a></td><td>1</td><td>0</td><td>JavaScript</td><td>2026-06-04</td><td>未提供描述</td><td>小型但持續更新的 Codex automation 工具集，近一週仍在修 install / share / release / docs 流程。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">過去一週內符合條件且可驗證的 GitHub Codex Skill 相關專案不足 20 個。本次僅列出 10 個可由 GitHub 頁面確認仍在更新的項目。</p>
+      </section>
+
+      <section>
+        <h2>觀察重點</h2>
+        <ul>
+          <li>這週真正還在動的高星項目，明顯集中在三條線：大型 skill catalog、正式 plugin 生態，以及能把 agent / skill / automation 串成完整工作流的框架。</li>
+          <li>很多高流量 repo 雖然 stars 很高，但最近 7 天沒有更新；如果你要觀察生態溫度，單看 stars 已經不夠，還要看 commit 活躍度。</li>
+          <li>OpenAI 官方這週同時出現在 `openai/codex` 與 `openai/plugins` 兩條線，代表 CLI 本體與 plugin / skill 週邊仍在一起演進。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>適合 MIS / 技術人員注意的項目</h2>
+        <ul>
+          <li><strong>不要只看星星：</strong>高星 repo 不等於最近還有人維護，導入前至少看最近 commit 與 release 節奏。</li>
+          <li><strong>先看執行入口：</strong>skills、plugins、automation 常會帶 shell、hooks、agent handoff 或外部 API 依賴，企業環境要先做白名單與來源審核。</li>
+          <li><strong>離線鏡像優先：</strong>若 PROD 無法連網，建議把要用的 skill / plugin 固定 commit SHA 後做內部 Git mirror 或封裝壓縮包。</li>
+          <li><strong>Windows 相容性：</strong>不少 repo 預設用 bash / POSIX 流程，若要落地在 SCCM、工作排程或 IIS 工具平台，先確認 PowerShell、路徑與非互動執行相容性。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>本週變化簡述</h2>
+        <p>和上週相比，這週比較明顯的是「實作型 plugin / automation」比單純 skill list 更活躍。像 `openai/plugins`、`compound-engineering-plugin`、`codex-automations` 這類專案，都在把技能從說明文件推向可安裝、可執行、可發版的形式。</p>
+        <p>另外也看得出來設計與展示類 skill 仍有熱度，但真正本週還在更新的高星項目不多，所以如果你是要挑企業可參考的樣板，建議優先看這份名單裡仍有 commit 的 repo，而不是只追整體 star 排行。</p>
+      </section>
+
+      <section>
+        <h2>結語</h2>
+        <p>這週的 Codex Skill / Plugin / Automation 生態，重點不是「出現很多新 repo」，而是「留下來且還在更新的 repo 正在往工具化、安裝化、流程化走」。對企業 IT 來說，這比單純收藏 prompt 更有參考價值。</p>
+        <p class="note">Stars、Forks 與最近 Push 時間會隨 GitHub 即時變動，此頁保留本次整理結果。資料時間點為 2026-06-06，若日後數值不同屬正常現象。</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Aaron Hunter. Built for GitHub Pages.</span>
+      <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">回到頁首</a>
+    </div>
+  </footer>
+</body>
+</html>
