@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Windows Codex 每週觀察：桌面操作、執行邊界與 MIS 導入檢查</title>
+  <meta name="description" content="使用 Anysearch 搜尋 2026-06-20 至 2026-06-27 過去一週 Windows Codex 相關繁體中文文章、貼文、討論與技術分享，整理成 MIS 技術紀錄。">
+  <meta property="og:title" content="Windows Codex 每週觀察：桌面操作、執行邊界與 MIS 導入檢查">
+  <meta property="og:description" content="整理本週繁體中文 Windows Codex 搜尋結果：Computer Use、Native Windows、WSL2、sandbox 與一般使用者工作台觀察。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-06-27-windows-codex-weekly/">
+  <meta property="og:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-06-27-windows-codex-weekly/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Windows Codex 每週觀察預覽圖">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windows Codex 每週觀察：桌面操作、執行邊界與 MIS 導入檢查">
+  <meta name="twitter:description" content="使用 Anysearch 搜尋過去一週繁中 Windows Codex 資料，整理成 MIS 技術紀錄。">
+  <meta name="twitter:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-06-27-windows-codex-weekly/preview.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --ink: #172033;
+      --muted: #617089;
+      --panel: #ffffff;
+      --line: #d7deea;
+      --blue: #1f6feb;
+      --blue-dark: #124ba0;
+      --cyan: #0f9fba;
+      --mint: #28b487;
+      --coral: #ef725f;
+      --amber: #b7791f;
+      --shadow: 0 18px 42px rgba(20, 38, 70, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.76;
+    }
+
+    a {
+      color: var(--blue-dark);
+      text-underline-offset: 3px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(215, 222, 234, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 10px 24px rgba(31, 111, 235, 0.26);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--blue-dark);
+      background: #e9f1ff;
+      outline: none;
+    }
+
+    .hero {
+      padding: 56px 0 36px;
+      color: #fff;
+      background: #172033;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.88fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: #bfefff;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--mint);
+      box-shadow: 0 0 0 6px rgba(40, 180, 135, 0.14);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.15rem, 5.8vw, 4.55rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 20px 0 0;
+      color: #d9e8f6;
+      font-size: 1.08rem;
+    }
+
+    .hero-image {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-image img {
+      width: 100%;
+      aspect-ratio: 1200 / 630;
+      object-fit: cover;
+    }
+
+    main {
+      padding: 38px 0 64px;
+    }
+
+    article {
+      display: grid;
+      gap: 22px;
+    }
+
+    section {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 14px 36px rgba(20, 38, 70, 0.07);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.3rem;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .notice {
+      border-left: 5px solid var(--amber);
+      background: #fff7e6;
+    }
+
+    .meta-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7f9fc;
+    }
+
+    .meta-list strong {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .card p:last-child,
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-list li {
+      margin: 0;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7f9fc;
+    }
+
+    .footer {
+      padding: 28px 0 36px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid,
+      .cards,
+      .meta-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="主要導覽">
+      <a class="brand" href="../../">
+        <span class="brand-mark">AH</span>
+        <span>Aaron Hunter</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../">首頁</a>
+        <a href="#sources">來源</a>
+        <a href="https://github.com/aaronhunter918/FaceBook">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Windows Codex Weekly | 2026-06-27</p>
+        <h1>桌面操作、執行邊界與 MIS 導入檢查</h1>
+        <p class="hero-copy">這篇是本週 Windows Codex 繁體中文搜尋紀錄。重點放在 Windows 版 Codex 的桌面操作能力、Native Windows / WSL2 執行邊界、沙盒治理，以及一般使用者把資料夾變成 AI 工作台的實務風險。</p>
+      </div>
+      <div class="hero-image">
+        <img src="./preview.png" alt="Windows Codex 每週觀察預覽圖">
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <article>
+      <section>
+        <h2>本週觀察重點</h2>
+        <ul>
+          <li>本次 Anysearch 以 week 範圍搜尋「Windows Codex」相關繁體中文文章、貼文、討論與技術分享，時間範圍視為 2026-06-20 至 2026-06-27。</li>
+          <li>過去一週內可整理的繁體中文 Windows Codex 資料有限。搜尋結果包含既有文章重新被搜尋到、社群短貼、教學頁與部分簡體中文內容，因此本文只整理可交叉判讀的方向。</li>
+          <li>本週最值得 MIS 注意的方向，是 Windows Codex 的討論已從「能不能在 Windows 上跑」轉向「應該跑在哪個執行邊界、哪些任務可以讓它碰桌面、哪些權限必須先擋住」。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>搜尋結果整理</h2>
+        <ul>
+          <li>Yahoo / 電腦王阿達轉載文章仍是本週搜尋結果中最完整的 Windows Computer Use 摘要，重點包含 Codex 26.527、Windows 前景桌面操作、Remote Control 與 GUI 測試情境。</li>
+          <li>AI 程式設計教學中文版把 Windows 上的 Codex 分成 Native Windows、WSL2、App、CLI、IDE extension 等入口，並強調排錯時要先釐清 sandbox、路徑、終端、依賴與網路邊界。</li>
+          <li>電腦玩物的繁中教學從一般使用者角度整理 Codex 桌面端，重點是把指定資料夾變成 AI 工作台，先盤點、再確認、最後才修改檔案。</li>
+          <li>社群貼文與短內容提到 Codex for Windows、Claude for Windows、語音輸入與 PowerShell 5.1 等使用感受，但多數缺少完整來源脈絡，本文只作為趨勢觀察，不作為功能規格。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Windows Codex 相關消息摘要</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Computer Use 仍是焦點</h3>
+            <p>本週搜尋結果持續指向 Windows Computer Use。對使用者來說，Codex 不只跑命令列與改檔案，也能在可見桌面上操作應用程式，但這同時代表滑鼠、鍵盤與視窗焦點都會被任務接管。</p>
+          </div>
+          <div class="card">
+            <h3>Native / WSL2 要先選清楚</h3>
+            <p>教學型資料提醒，Windows 上排錯不要把 Native Windows、WSL2、App、CLI 與 IDE extension 混成一團。專案在哪裡、工具鏈在哪裡、sandbox 作用在哪裡，會直接影響可重現性。</p>
+          </div>
+          <div class="card">
+            <h3>一般使用者場景變多</h3>
+            <p>繁中教學也把 Codex 描述成文件、資料夾與工作成果處理工具。這對 MIS 是提醒：未來求助內容不一定是程式碼，也可能是使用者希望 AI 幫忙整理本機或同步資料夾。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>對 MIS / Windows 使用者的影響</h2>
+        <p>對 MIS 來說，Windows Codex 的價值會落在幾個很實際的場景：內部工具 UI 測試、安裝流程驗證、PowerShell 腳本修改、舊系統操作紀錄、文件整理，以及讓 AI 協助重現桌面 App 問題。這些場景過去常卡在「沒有 API、不能只靠 CLI、畫面狀態才是問題本體」。</p>
+        <p>但 Windows Computer Use 不是背景服務，也不該被當成無人看管的 RPA。它會操作目前可見桌面，代表滑鼠、鍵盤、視窗焦點與登入狀態都會被任務影響。在企業環境中，這件事比功能本身更重要。</p>
+        <p>另一個影響是教育與支援成本。當使用者開始把 Codex 當成資料夾工作台，MIS 要準備回答的問題會包含：哪些資料夾可以授權、哪些雲端同步資料不該交給 AI、哪些檔案變更要先備份、以及公司資料能不能進入外部 AI 流程。</p>
+      </section>
+
+      <section class="notice">
+        <h2>值得注意的地方</h2>
+        <ul>
+          <li>若任務可以用 PowerShell、API、測試框架、MCP 或專用 CLI 完成，仍應優先用結構化工具；Computer Use 適合補足只能看畫面的流程。</li>
+          <li>Windows 原生環境與 WSL2 不要混用路徑、Git、Node、Python 與測試命令；排錯前先確認 Codex 的 runtime env。</li>
+          <li>涉及帳號、付款、刪除、解除安裝、重設、覆蓋檔案或內部系統操作時，不應讓 Codex 自行連續執行，必須有人確認每個不可逆步驟。</li>
+          <li>企業端要先定義可寫目錄、網路權限、憑證暴露範圍、Log 留存位置與測試帳號，不要直接在日常使用者桌面上測高風險任務。</li>
+          <li>本週搜尋結果裡有部分內容提到未驗證的模型版本或誇張能力描述，本文不採納這類說法。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>我的實務看法</h2>
+        <p>我會把 Windows Codex 視為「可協助處理 Windows 工作流的 agent 工具」，而不是單純的程式碼產生器。真正要導入時，第一步不會是開放全員使用，而是挑幾個低風險、可重跑、可還原的場景測試，例如內部工具的 GUI smoke test、安裝精靈截圖驗證、或把人工操作步驟轉成可紀錄的檢查流程。</p>
+        <p>如果放到 MIS 環境，我會建議先用專用測試 VM 或測試帳號跑，並且把檔案寫入範圍限制在工作資料夾。使用者端則要建立「先盤點、不先修改」的習慣，尤其是文件、試算表、雲端同步資料夾與內部工具輸出目錄。</p>
+        <p>Codex 能看畫面與點按鈕很方便，但這也意味著它可能碰到一般自動化工具碰不到的地方。方便與風險通常是一起來的，企業環境要先設護欄，再談效率。</p>
+      </section>
+
+      <section>
+        <h2>結論</h2>
+        <p>本週繁體中文 Windows Codex 資料量不多，但方向很明確：Windows 版 Codex 正從「本機開發輔助」往「桌面操作 + 執行邊界管理 + 文件工作台」靠近。對 Windows 使用者是好消息，對 MIS 則代表要開始思考 agent 在端點上的權限邊界、操作紀錄與風險控管。</p>
+        <p>短期內，我會把它定位在測試與輔助，而不是正式替代既有 SCCM、PowerShell、GPO、RPA 或端點管理流程。等沙盒、權限與企業部署模式更穩定後，再評估更深的整合。</p>
+      </section>
+
+      <section id="sources">
+        <h2>來源與查詢紀錄</h2>
+        <ul class="source-list">
+          <li><a href="https://tw.news.yahoo.com/windows-%E7%89%88-codex-%E7%B5%82%E6%96%BC%E9%96%8B%E6%94%BE-computer-230532824.html">Windows 版 Codex 終於開放 Computer Use 功能，現在 AI 能直接操作電腦裡的軟體了</a></li>
+          <li><a href="https://aiworkflowtutorials.com/zh-Hant/docs/codex/official/01-products/120-windows-codex">在 Windows 上使用 Codex · AI 程式設計教學中文版</a></li>
+          <li><a href="https://www.playpcesor.com/2026/05/codex-ai.html">一般人如何快速上手 Codex 超完整圖文教學：讓 AI 助理整理文件表格，建立自動化流程</a></li>
+          <li><a href="https://www.threads.com/@ai_store88888/post/DXbeVmTD-mj/">Threads：最近嘗試 Codex for Windows / Claude for Windows 的使用貼文</a></li>
+          <li><a href="https://github.com/openai/codex/issues/19518">GitHub Issue：Codex Desktop language setting on Windows</a></li>
+          <li>Anysearch 查詢：Windows Codex 繁體中文 台灣 香港 技術分享 討論、Windows Codex OpenAI 繁體中文 文章 貼文 討論、Windows Codex 使用心得 PowerShell Windows 繁體中文，freshness=week。</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Aaron Hunter. Windows Codex weekly note.</div>
+  </footer>
+</body>
+</html>
