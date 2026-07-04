@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Codex Skill 熱門專案 TOP20</title>
+  <meta name="description" content="整理 2026-06-27 至 2026-07-04 間仍有更新、且與 Codex skills、agents、plugins、automation 相關的 GitHub Repository，依 Stars 由高到低列出 TOP20。">
+  <meta property="og:title" content="GitHub Codex Skill 熱門專案 TOP20">
+  <meta property="og:description" content="整理 2026-06-27 至 2026-07-04 間仍有更新、且與 Codex skills、agents、plugins、automation 相關的 GitHub Repository，依 Stars 由高到低列出 TOP20。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-07-04-codex-skill-github-top20/">
+  <meta property="og:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-07-04-codex-skill-github-top20/preview.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --ink: #172033;
+      --muted: #617089;
+      --panel: #ffffff;
+      --line: #d7deea;
+      --blue: #1f6feb;
+      --blue-dark: #124ba0;
+      --cyan: #0f9fba;
+      --mint: #28b487;
+      --coral: #ef725f;
+      --amber: #f4b942;
+      --shadow: 0 22px 60px rgba(20, 38, 70, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    a { color: var(--blue-dark); }
+    img { display: block; max-width: 100%; }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(215, 222, 234, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 10px 24px rgba(31, 111, 235, 0.26);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--blue-dark);
+      background: #e9f1ff;
+      outline: none;
+    }
+
+    .hero {
+      padding: 58px 0 34px;
+      color: #fff;
+      background:
+        radial-gradient(circle at top right, rgba(15, 159, 186, 0.38), transparent 36%),
+        linear-gradient(135deg, #10192b, #172033 58%, #12395c);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: #bfefff;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--mint);
+      box-shadow: 0 0 0 6px rgba(40, 180, 135, 0.14);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: #d9e8f6;
+      font-size: 1.08rem;
+    }
+
+    .hero-image {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image img {
+      width: 100%;
+      aspect-ratio: 1200 / 630;
+      object-fit: cover;
+    }
+
+    main { padding: 38px 0 64px; }
+    article { display: grid; gap: 26px; }
+
+    section {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 14px 36px rgba(20, 38, 70, 0.07);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 1.3rem; }
+    li + li { margin-top: 6px; }
+
+    .meta-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f7f9fc;
+    }
+
+    .meta-list strong {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1240px;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      color: #fff;
+      background: #172033;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    td:nth-child(1),
+    td:nth-child(3),
+    td:nth-child(4) {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    td:nth-child(2) {
+      min-width: 220px;
+      overflow-wrap: anywhere;
+      font-weight: 800;
+    }
+
+    td:nth-child(6) {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer a {
+      color: var(--blue-dark);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero-grid,
+      .meta-list {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 20px; }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 24px, 1080px); }
+      section { padding: 18px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="主要導覽">
+      <a class="brand" href="../../" aria-label="回到首頁">
+        <span class="brand-mark">AH</span>
+        <span>Aaron Hunter</span>
+      </a>
+      <div class="nav-links">
+        <a href="../../">首頁</a>
+        <a href="#ranking">TOP20</a>
+        <a href="https://github.com/aaronhunter918/FaceBook">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">GitHub Repository Weekly</p>
+        <h1>GitHub Codex Skill 熱門專案 TOP20</h1>
+        <p class="hero-copy">這份整理聚焦 2026-06-27 到 2026-07-04 之間仍有更新，且和 Codex skills、agent skills、Codex plugins、Codex agents 或 automation 關聯明確的 GitHub Repository。先用 Anysearch 搜尋候選，再用 GitHub API 公開資料核對 stars、forks、語言、description 與最近 push。</p>
+      </div>
+      <div class="hero-image">
+        <img src="./preview.png" alt="Codex Skill TOP20 預覽圖">
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <article>
+      <section>
+        <h2>前言</h2>
+        <p>這週榜單很明顯不是單純的「技能包排行」。高星項目大多已經把 skill、agent、plugin、knowledge graph、workspace、automation 甚至 desktop app 全部綁在一起，社群重心正在從單點提示詞，往整套可安裝、可治理、可協作的 Codex 工作流平台移動。</p>
+        <p>對 MIS、IT 管理與內部平台維護者來說，這種演變很實際。你可以更快找到能直接拿來驗證的方案，但也代表每個 repo 的攻擊面、外部依賴、權限邊界與企業環境相容性都更複雜，不能只看 Stars 高就直接導入。</p>
+      </section>
+
+      <section>
+        <h2>搜尋條件</h2>
+        <ul class="meta-list">
+          <li><strong>資料整理日期</strong>2026-07-04 19:09 +08:00</li>
+          <li><strong>搜尋時間範圍</strong>2026-06-27 至 2026-07-04，過去 7 天內有 push / 更新</li>
+          <li><strong>排序依據</strong>GitHub Stars 由高到低</li>
+          <li><strong>資料來源</strong>Anysearch 搜尋結果與 GitHub Repository / GitHub API 公開可驗證資料</li>
+        </ul>
+        <p class="note">搜尋關鍵字涵蓋 <code>Codex skill</code>、<code>Codex skills</code>、<code>OpenAI Codex skill</code>、<code>Agent skill</code>、<code>Codex agents</code>、<code>Codex plugin</code>、<code>Codex automation</code>。若 repo 對 Codex 的關聯來自 skills、plugins、agent teams、subagents、automation 或工作流整合，且能由 GitHub 公開資料驗證，就納入候選。GitHub 專案語言保留原始欄位，不把繁體中文當成 repo 語言條件。</p>
+      </section>
+
+      <section id="ranking">
+        <h2>TOP20 排名表</h2>
+        <div class="table-wrap" role="region" aria-label="GitHub Codex Skill 熱門專案 TOP20" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>專案</th>
+                <th>Stars</th>
+                <th>Forks</th>
+                <th>語言</th>
+                <th>最近 Push</th>
+                <th>原始描述</th>
+                <th>功能簡介</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>225,828</td><td>34,542</td><td>JavaScript</td><td>2026-07-04</td><td>The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</td><td>大型 agent harness 系統，把 skills、memory、安全與 research-first 流程包成一套可重複使用的開發底座。</td></tr>
+              <tr><td>2</td><td><a href="https://github.com/farion1231/cc-switch">farion1231/cc-switch</a></td><td>113,059</td><td>7,518</td><td>Rust</td><td>2026-07-04</td><td>A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Gemini CLI &amp; Hermes Agent. Only official website: ccswitch.io</td><td>偏工作台型的整合工具，主打多 CLI、skills 管理、provider 切換與桌面化操作入口。</td></tr>
+              <tr><td>3</td><td><a href="https://github.com/openai/codex">openai/codex</a></td><td>95,439</td><td>14,155</td><td>Rust</td><td>2026-07-04</td><td>Lightweight coding agent that runs in your terminal</td><td>OpenAI 官方 Codex CLI，本週仍持續更新，整個 skill / plugin / automation 生態仍圍繞這條主線發展。</td></tr>
+              <tr><td>4</td><td><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></td><td>77,350</td><td>7,662</td><td>Python</td><td>2026-07-04</td><td>AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.</td><td>把 codebase、文件與基礎設施關係整理成可查詢知識圖譜，適合大型 repo 盤點與上下文壓縮。</td></tr>
+              <tr><td>5</td><td><a href="https://github.com/nexu-io/open-design">nexu-io/open-design</a></td><td>74,825</td><td>8,541</td><td>TypeScript</td><td>2026-07-04</td><td>🎨 The Vibe Design Workspace &amp; the open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images &amp; video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen &amp; 20+ CLIs via BYOK.</td><td>把 skills 與設計工作台整合到桌面 app，適合觀察 Codex 在內容與 UI 產出流程的延伸用法。</td></tr>
+              <tr><td>6</td><td><a href="https://github.com/Egonex-AI/Understand-Anything">Egonex-AI/Understand-Anything</a></td><td>70,740</td><td>5,860</td><td>TypeScript</td><td>2026-07-03</td><td>Graphs that teach &gt; graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.</td><td>另一條高熱度知識圖譜路線，強調可探索、可提問、可教學式理解，適合交接陌生系統時先做脈絡整理。</td></tr>
+              <tr><td>7</td><td><a href="https://github.com/code-yeongyu/oh-my-openagent">code-yeongyu/oh-my-openagent</a></td><td>64,778</td><td>5,293</td><td>TypeScript</td><td>2026-07-04</td><td>omo/lazycodex: The coding agent for tokenmaxxers;the one and only agent harness for complex codebases. For your Codex, for your OpenCode</td><td>偏複雜 codebase 的 Codex / OpenCode agent harness，重點在降低高上下文成本與提升多代理協作效率。</td></tr>
+              <tr><td>8</td><td><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></td><td>62,913</td><td>7,402</td><td>TypeScript</td><td>2026-07-04</td><td>🌊 The leading agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated</td><td>多代理 swarm 與 automation 編排平台，適合觀察 Codex 如何接進更大規模的 agent 協作系統。</td></tr>
+              <tr><td>9</td><td><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></td><td>57,452</td><td>3,534</td><td>TypeScript</td><td>2026-07-04</td><td>Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent — fewer tokens, fewer tool calls, 100% local</td><td>本機化 code knowledge graph，主打少 token、少 tool call，對企業內部 repo 與離線場景有實用價值。</td></tr>
+              <tr><td>10</td><td><a href="https://github.com/HKUDS/nanobot">HKUDS/nanobot</a></td><td>44,998</td><td>7,938</td><td>Python</td><td>2026-07-04</td><td>Lightweight, open-source AI agent for your tools, chats, and workflows.</td><td>雖然不是純 skill 庫，但與 Codex 工作流整合關聯明確，可視為可銜接工具、聊天與流程的輕量代理底座。</td></tr>
+              <tr><td>11</td><td><a href="https://github.com/sickn33/antigravity-awesome-skills">sickn33/antigravity-awesome-skills</a></td><td>42,322</td><td>6,757</td><td>Python</td><td>2026-07-04</td><td>Installable GitHub library of 1,800+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes specialized plugins, installer CLI, bundles, workflows, and official/community skill collections.</td><td>大型 installable skill library，把社群技能、bundles、plugins 與 workflow 資產集中整理成可安裝集合。</td></tr>
+              <tr><td>12</td><td><a href="https://github.com/wshobson/agents">wshobson/agents</a></td><td>37,496</td><td>4,022</td><td>Python</td><td>2026-06-29</td><td>Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot, and Gemini CLI</td><td>偏 marketplace 與 orchestration 的插件平台，適合觀察多工作流、多 agent 的可分發管理方式。</td></tr>
+              <tr><td>13</td><td><a href="https://github.com/Yeachan-Heo/oh-my-codex">Yeachan-Heo/oh-my-codex</a></td><td>31,650</td><td>2,460</td><td>TypeScript</td><td>2026-07-04</td><td>OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.</td><td>專注擴充 Codex 本體，透過 hooks、agent teams 與 HUD 類介面補足多人或多角色協作需求。</td></tr>
+              <tr><td>14</td><td><a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a></td><td>30,111</td><td>3,044</td><td>Python</td><td>2026-07-01</td><td>Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.</td><td>面向科研場景的高密度 skills 庫，顯示 Codex 生態已經擴到專業領域 workflow。</td></tr>
+              <tr><td>15</td><td><a href="https://github.com/iOfficeAI/AionUi">iOfficeAI/AionUi</a></td><td>29,263</td><td>2,917</td><td>TypeScript</td><td>2026-07-03</td><td>Free, local, open-source 24/7 Cowork app for OpenClaw, Hermes Agent, Claude Code, Codex, OpenCode, Gemini CLI and 20+ more CLI | Customize your assistants | Star if you like it!</td><td>把 Codex 與其他 CLI agent 放進長時間共工桌面，偏 operator 介面與持續協作場景。</td></tr>
+              <tr><td>16</td><td><a href="https://github.com/VoltAgent/awesome-agent-skills">VoltAgent/awesome-agent-skills</a></td><td>27,247</td><td>2,919</td><td>未確認</td><td>2026-06-30</td><td>A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.</td><td>偏目錄型 agent skill 收錄專案，適合快速盤點有哪些技能庫與可重用工作流值得進一步追蹤。</td></tr>
+              <tr><td>17</td><td><a href="https://github.com/OthmanAdi/planning-with-files">OthmanAdi/planning-with-files</a></td><td>24,473</td><td>2,102</td><td>Python</td><td>2026-07-03</td><td>Persistent file-based planning for AI coding agents and long-running agentic tasks. Crash-proof markdown plans that survive context loss and /clear, plus a deterministic completion gate and multi-agent shared state on disk. Manus-style. Works with Claude Code, Codex CLI, Cursor, Kiro, OpenCode and 60+ agents via the SKILL.md standard.</td><td>針對長任務與多代理共享狀態的 planning skill，對背景執行與持久工作流很有參考價值。</td></tr>
+              <tr><td>18</td><td><a href="https://github.com/EveryInc/compound-engineering-plugin">EveryInc/compound-engineering-plugin</a></td><td>22,592</td><td>1,672</td><td>TypeScript</td><td>2026-07-03</td><td>Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more</td><td>正式 plugin 專案，偏工程治理與團隊協作導向，適合觀察 plugin 如何從個人工具演進到可安裝產品。</td></tr>
+              <tr><td>19</td><td><a href="https://github.com/alirezarezvani/claude-skills">alirezarezvani/claude-skills</a></td><td>19,903</td><td>2,733</td><td>Python</td><td>2026-07-03</td><td>337 Claude Code skills &amp; agent skills &amp; plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial &amp; finance, and your daily productivity skills.</td><td>跨工程、研究與商務場景的大型技能包，這週仍在擴充 skills、agents 與 plugins 的組合深度。</td></tr>
+              <tr><td>20</td><td><a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep">wanshuiyin/Auto-claude-code-research-in-sleep</a></td><td>12,978</td><td>1,177</td><td>Python</td><td>2026-07-03</td><td>ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.</td><td>偏研究自動化與夜間背景流程的 skill 集，適合觀察 Codex 在長時間、自主循環任務上的應用方式。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">本週可驗證且符合條件的相關 repo 超過 20 個，因此榜單能完整列滿。<code>openai/plugins</code> 雖然在 2026-07-04 仍有更新，但以 3,998 Stars 暫未進入本週前 20。</p>
+      </section>
+
+      <section>
+        <h2>觀察重點</h2>
+        <ul>
+          <li>前十名幾乎都不是單純技能清單，而是把 skill、agent、plugin、knowledge graph、workspace 與 automation 打包成完整工作流產品。</li>
+          <li>知識圖譜線依舊很強，<code>Graphify-Labs/graphify</code>、<code>Egonex-AI/Understand-Anything</code>、<code>colbymchenry/codegraph</code> 都把「減少上下文成本」做成核心賣點。</li>
+          <li>官方主線仍在動，<code>openai/codex</code> 於 2026-07-04 仍有 push；<code>openai/plugins</code> 也在同日更新，但星數暫時追不上前 20。</li>
+          <li>本週上榜項目裡，跨 CLI 與多代理兼容已經是常態，不少 repo 同時支援 Codex、Claude Code、Cursor、OpenCode、Gemini CLI 等多個入口。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>MIS / 技術人員注意項目</h2>
+        <ul>
+          <li><strong>先看權限與外連：</strong>熱門 repo 常內建 plugin、MCP、browser automation、雲端模型或多 provider 支援，企業環境要先確認防火牆、代理、憑證與審計需求。</li>
+          <li><strong>Windows 相容性要個別驗證：</strong>雖然不少專案標榜跨平台，但實際可能假設 POSIX shell、Node.js 生態或桌面 GUI；若要進 SCCM、工作排程或非互動環境，仍要補做靜默執行與 log 驗證。</li>
+          <li><strong>導入前先固定版本：</strong>skills、plugins、agents 與 installer 類 repo 更新非常快，建議先 pin commit SHA、做內部 mirror，再進 OA / PROD 驗證。</li>
+          <li><strong>Stars 不是安全審查：</strong>高關注度不能取代授權確認、依賴掃描、資料流盤點與腳本內容審核，尤其是會執行 hooks、subagents 或外部命令的專案。</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>本週變化簡述</h2>
+        <p>和 2026-06-27 那篇相比，本週前段班整體星數繼續上升，尤其 <code>openai/codex</code> 已來到 95,439 Stars，<code>affaan-m/ECC</code> 也突破 225K。更值得注意的是，本週榜單更偏向「平台化」與「知識圖譜化」，純 plugin 或純 curated list 類型在前段班被壓縮得更明顯。</p>
+        <p>上週榜內的 <code>openai/skills</code>、<code>openai/codex-plugin-cc</code>、<code>VoltAgent/awesome-codex-subagents</code> 這週因最近 push 時間不在 2026-06-27 到 2026-07-04 範圍內而退場；相對地，<code>colbymchenry/codegraph</code>、<code>iOfficeAI/AionUi</code>、<code>OthmanAdi/planning-with-files</code>、<code>wshobson/agents</code> 這類更偏工作流平台與共享狀態的項目，把榜單重心往實作導向再推了一步。</p>
+      </section>
+
+      <section>
+        <h2>結語</h2>
+        <p>如果你是 MIS、平台管理或內部工具維護角色，這份榜單最值得注意的不是哪個 repo 最紅，而是 Codex 生態已經從「技能檔案」往「可治理的工作流平台」快速延伸。導入門檻變高了，但能帶來的自動化深度也確實更高。</p>
+        <p class="note">Stars、Forks 與最近 Push 時間會隨 GitHub 即時變動，此頁保留本次整理結果。資料時間點為 2026-07-04 19:09 +08:00，若之後數值不同屬正常現象。</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Aaron Hunter. Built for GitHub Pages.</span>
+      <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">回到頁首</a>
+    </div>
+  </footer>
+</body>
+</html>
