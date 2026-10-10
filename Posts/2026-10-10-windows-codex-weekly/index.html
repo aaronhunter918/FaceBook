@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Windows Codex 每週觀察：0.162.0、Windows 修正與桌面工作流</title>
+  <title>Windows Codex 每週觀察：0.162.1、0.163 alpha 與 Windows 修正</title>
   <meta name="description" content="使用 Anysearch 搜尋 2026-10-04 至 2026-10-10 過去一週 Windows Codex 相關繁體中文文章、貼文、討論與技術分享，整理成 MIS 技術紀錄。">
-  <meta property="og:title" content="Windows Codex 每週觀察：0.162.0、Windows 修正與桌面工作流">
-  <meta property="og:description" content="整理本週 Windows Codex 搜尋結果：繁中資料仍有限，重點在 Codex 0.162.0、Windows PowerShell installer、sandbox 與桌面工作流。">
+  <meta property="og:title" content="Windows Codex 每週觀察：0.162.1、0.163 alpha 與 Windows 修正">
+  <meta property="og:description" content="整理本週 Windows Codex 搜尋結果：繁中資料仍有限，重點在 Codex 0.162.1、0.163 alpha、Windows PowerShell installer、sandbox 與桌面工作流。">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-10-10-windows-codex-weekly/">
   <meta property="og:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-10-10-windows-codex-weekly/preview.png">
@@ -14,7 +14,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Windows Codex 每週觀察預覽圖">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Windows Codex 每週觀察：0.162.0、Windows 修正與桌面工作流">
+  <meta name="twitter:title" content="Windows Codex 每週觀察：0.162.1、0.163 alpha 與 Windows 修正">
   <meta name="twitter:description" content="使用 Anysearch 搜尋過去一週繁中 Windows Codex 資料，整理成 MIS 技術紀錄。">
   <meta name="twitter:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-10-10-windows-codex-weekly/preview.png">
   <style>
@@ -312,7 +312,7 @@
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Windows Codex Weekly · 2026-10-10</p>
-        <h1>0.162.0、Windows 修正與桌面工作流</h1>
+        <h1>0.162.1、0.163 alpha 與 Windows 修正</h1>
         <p class="hero-copy">這週用 Anysearch 以 week 範圍搜尋 Windows Codex 相關繁體中文文章、貼文、討論與技術分享；整體公開繁中資料仍不多，因此這篇以官方說明、OpenAI/codex release 與社群搜尋結果交叉整理，偏向 MIS 實務觀察。</p>
       </div>
       <div class="hero-image">
@@ -335,7 +335,7 @@
       <section class="notice">
         <h2>本週觀察重點</h2>
         <p>過去一週內可整理的繁體中文 Windows Codex 資料有限。這次搜尋有抓到 OpenAI Help Center 的繁中 Codex 說明、ChatGPT 版本說明、ChatGPT Work and Codex 說明，以及 openai/codex 在 10 月 8 日前後的 releases；但真正屬於繁體中文社群的深度技術分享仍偏少。</p>
-        <p>本週比較值得 MIS 注意的不是單一教學文，而是 Codex 工具鏈的 Windows 支援持續補齊：release notes 提到 Windows 檔案存取、sandbox temp permission、PowerShell installer 與安裝 checksum 驗證等項目。這些都不是華麗功能，但對企業 Windows 環境很實際。</p>
+        <p>本週比較值得 MIS 注意的不是單一教學文，而是 Codex 工具鏈的 Windows 支援持續補齊：release notes 提到 Windows 檔案存取、sandbox temp permission、PowerShell installer 與安裝 checksum 驗證等項目。10 月 9 日的 0.162.1 則偏向修 TUI 與背景服務啟動問題，10 月 10 日還能看到 0.163.0-alpha.5 預發版訊號。這些都不是華麗功能，但對企業 Windows 環境很實際。</p>
       </section>
 
       <section>
@@ -347,11 +347,11 @@
           </div>
           <div class="card">
             <h3>版本與 release</h3>
-            <p>openai/codex releases 顯示 0.162.0 在 2026-10-08 發布，並列出 managed Git worktrees、Pinned tasks、URL clickable、Responses retry、Windows 10 檔案存取與 Windows sandbox temp permission 等更新。</p>
+            <p>openai/codex releases 顯示 0.162.0 在 2026-10-08 發布，0.162.1 在 2026-10-09 成為 latest，並列出 managed Git worktrees、Pinned tasks、URL clickable、Responses retry、Windows 10 檔案存取、Windows sandbox temp permission 與 TUI / 背景服務修正。</p>
           </div>
           <div class="card">
             <h3>社群與背景資料</h3>
-            <p>搜尋結果仍混有較早的 Facebook、Threads、教學站、Microsoft Store 與 Reddit 翻譯內容。這些可當背景觀察，但不能直接視為本週新消息。</p>
+            <p>搜尋結果仍混有較早的 Facebook、Threads、教學站、Microsoft Store 與 Reddit 翻譯內容。本週另出現 UsageTray 這類 Windows Codex 用量監控工具搜尋結果，但只能視為生態訊號，不能當成 OpenAI 官方消息。</p>
           </div>
         </div>
       </section>
@@ -360,6 +360,8 @@
         <h2>Windows Codex 相關消息摘要</h2>
         <ul>
           <li>OpenAI/codex 0.162.0 的 release 重點包含建立與列出 managed Git worktrees、Command Center pin task、改善 transcript 複製與滑鼠滾動、讓多處 URL 可點擊，以及自訂 Responses-compatible model provider 的 live web access / remote compaction 能力。</li>
+          <li>0.162.1 是 2026-10-09 的 latest stable，重點修正多行非同步問題造成的 TUI crash，以及背景 server feature settings 與 CLI defaults 差異導致的啟動失敗。</li>
+          <li>0.163.0-alpha.5 在 2026-10-10 出現，但屬於 pre-release；企業環境不應直接把 alpha 當正式部署依據。</li>
           <li>Windows 相關修正包含恢復 Windows 10 一般磁碟代號檔案存取、讓 Windows sandbox temp 權限更貼近子行程環境，以及修正透過 PowerShell 安裝時的 archive checksum 驗證問題。</li>
           <li>release 的 chores 提到 Windows releases 會發布 signed PowerShell installer，這對 Windows Client 管理、封裝與內部部署流程值得後續追蹤。</li>
           <li>Anysearch 找到的繁中 Help Center 摘要顯示 Codex 在 ChatGPT 方案、Codex Cloud、桌面與 Work 工作流中的定位仍在被補文件與更新說明。</li>
@@ -383,7 +385,7 @@
 
       <section>
         <h2>我的實務看法</h2>
-        <p>這週我會把 Windows Codex 的狀態判斷為「功能正在補齊，但企業部署還是要保守」。0.162.0 的內容看起來不像單純加功能，而是在補 Windows 使用者會真的踩到的邊角，例如 sandbox 權限、PowerShell 安裝與 Windows 10 檔案存取。這類更新通常不會在社群上很熱鬧，但對 MIS 很關鍵。</p>
+        <p>這週我會把 Windows Codex 的狀態判斷為「功能正在補齊，但企業部署還是要保守」。0.162.0 到 0.162.1 的內容看起來不像單純加功能，而是在補 Windows 使用者會真的踩到的邊角，例如 sandbox 權限、PowerShell 安裝、Windows 10 檔案存取、TUI 穩定性與背景服務啟動。這類更新通常不會在社群上很熱鬧，但對 MIS 很關鍵。</p>
         <p>我的建議是：把 Codex 當成受控工程工具導入，不要直接當成一般使用者桌面助理全面開放。先選一個明確範圍，例如 PowerShell 腳本審查、內部工具 HTML/CSS 修改、GitHub Pages 文章維護或測試環境自動化，再搭配 Git diff、commit review 與執行權限控管。這樣比較符合企業 Windows 的現實。</p>
       </section>
 
@@ -400,6 +402,8 @@
           <li>Anysearch week search：Windows Codex OpenAI site:tw OR site:hk 繁體中文 技術 分享。</li>
           <li>Anysearch week search：OpenAI Codex Windows ChatGPT Codex 繁體中文 討論。</li>
           <li>Anysearch week search：Codex CLI Windows OpenAI 版本 更新 繁體中文。</li>
+          <li>Anysearch extract：openai/codex releases，確認 0.162.1、0.163.0-alpha.5 與 0.162.0 release notes。</li>
+          <li>Anysearch search result：Microsoft Store UsageTray 項目，僅作為 Windows Codex 周邊工具生態觀察。</li>
           <li><a href="https://github.com/openai/codex/releases">openai/codex releases</a></li>
           <li><a href="https://help.openai.com/zh-hant-hk/articles/6825453-chatgpt-release-notes">ChatGPT 版本說明</a></li>
           <li><a href="https://help.openai.com/zh-hant-hk/articles/11369540-using-codex-with-your-chatgpt-plan">在你的 ChatGPT 方案中使用 Codex</a></li>
