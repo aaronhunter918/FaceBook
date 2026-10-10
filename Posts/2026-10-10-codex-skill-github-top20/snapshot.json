@@ -1,0 +1,28 @@
+{
+  "collected_at": "2026-10-10T08:00:00+00:00",
+  "window_start": "2026-10-03T08:00:00+00:00",
+  "window_end": "2026-10-10T08:00:00+00:00",
+  "sources": ["Anysearch week discovery", "GitHub Repository API"],
+  "repositories": [
+    ["affaan-m/ECC",276127,41197,"JavaScript","2026-10-10T01:41:12Z","The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."],
+    ["NousResearch/hermes-agent",252361,54522,"Python","2026-10-10T07:00:29Z","The agent that grows with you"],
+    ["farion1231/cc-switch",142166,9490,"Rust","2026-10-10T05:47:14Z","A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode, OpenClaw, Grok Build & Hermes Agent."],
+    ["nextlevelbuilder/ui-ux-pro-max-skill",134321,14269,"Python","2026-10-09T05:06:45Z","An AI skill that provides design intelligence for building professional UI/UX across multiple platforms."],
+    ["openai/codex",128461,20158,"Rust","2026-10-10T04:33:47Z","Lightweight coding agent that runs in your terminal"],
+    ["Graphify-Labs/graphify",125104,12077,"Python","2026-10-10T00:53:14Z","A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI."],
+    ["addyosmani/agent-skills",104211,10879,"JavaScript","2026-10-10T07:55:52Z","Production-grade engineering skills for AI coding agents."],
+    ["nexu-io/open-design",100283,11569,"TypeScript","2026-10-10T07:31:49Z","Local-first design engine for coding agents including Codex."],
+    ["thedotmack/claude-mem",99051,8674,"TypeScript","2026-10-09T10:23:45Z","Persistent Context Across Sessions for Every Agent."],
+    ["Leonxlnx/taste-skill",94214,6411,"JavaScript","2026-10-09T21:58:20Z","Taste-Skill for AI coding."],
+    ["stablyai/orca",88813,5682,"TypeScript","2026-10-10T07:54:12Z","ADE for working with a fleet of parallel agents."],
+    ["Egonex-AI/Understand-Anything",85790,7219,"TypeScript","2026-10-09T05:35:24Z","Interactive code knowledge graph for Claude Code, Codex and more."],
+    ["tt-a1i/archify",81404,5500,"JavaScript","2026-10-10T07:52:08Z","An agent skill for Claude Code, Codex, and more."],
+    ["diegosouzapw/OmniRoute",74756,10793,"TypeScript","2026-10-10T07:43:32Z","AI gateway that works with Codex and other coding tools."],
+    ["ruvnet/ruflo",74224,8823,"TypeScript","2026-10-10T07:49:08Z","Agent harness with native Claude Code / Codex integration."],
+    ["career-ops-hq/career-ops",73926,13873,"JavaScript","2026-10-10T07:15:21Z","AI job search agent that runs in Codex and other coding CLIs."],
+    ["colbymchenry/codegraph",73637,4740,"C","2026-10-10T07:15:22Z","Local code knowledge graph for Codex and other agents."],
+    ["code-yeongyu/oh-my-openagent",69927,5745,"TypeScript","2026-10-10T07:42:33Z","Open agent orchestration workspace."],
+    ["Alishahryar1/free-claude-code",57168,9130,"Python","2026-10-10T07:15:00Z","Multi-harness terminal tool including Codex."],
+    ["morluto/rea",55463,10634,"TypeScript","2026-10-10T07:48:21Z","Reverse engineer anything with agents."]
+  ]
+}
