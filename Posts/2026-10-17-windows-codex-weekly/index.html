@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Windows Codex 每週觀察：0.163.0 與 Windows 操作改善</title>
+  <meta name="description" content="使用 Anysearch 搜尋 2026-10-11 至 2026-10-17 的 Windows Codex 繁體中文資料，整理 Codex CLI 0.163.0 與 Windows 實務重點。">
+  <meta property="og:title" content="Windows Codex 每週觀察：0.163.0 與 Windows 操作改善">
+  <meta property="og:description" content="本週繁中資料有限；以 Anysearch 與官方 release 核實 Codex CLI 0.163.0 的 Windows 影響。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-10-17-windows-codex-weekly/">
+  <meta property="og:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-10-17-windows-codex-weekly/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Windows Codex 每週觀察預覽圖">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windows Codex 每週觀察：0.163.0 與 Windows 操作改善">
+  <meta name="twitter:description" content="Anysearch 過去一週搜尋與官方 release 核實的 MIS 技術紀錄。">
+  <meta name="twitter:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-10-17-windows-codex-weekly/preview.png">
+  <style>
+    :root{--bg:#f4f7fb;--ink:#172033;--muted:#617089;--panel:#fff;--line:#d7deea;--blue:#1f6feb;--cyan:#0f9fba;--amber:#b7791f}*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.76}a{color:#124ba0;text-underline-offset:3px}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}.topbar{position:sticky;top:0;z-index:5;background:#fffffff0;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:18px}.brand{font-weight:800;color:var(--ink);text-decoration:none}.nav a:not(.brand){margin-left:16px;text-decoration:none;font-weight:700;color:var(--muted)}.hero{padding:56px 0 38px;color:#fff;background:#172033}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}.eyebrow{color:#bfefff;font-weight:800}.hero h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.08;margin:8px 0}.hero-copy{color:#d9e8f6;font-size:1.08rem}.hero img{width:100%;display:block;border-radius:8px;box-shadow:0 18px 42px #0005}main{padding:36px 0 64px}article{display:grid;gap:20px}section{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 30px #14264612}h2{margin:0 0 12px;font-size:1.45rem;line-height:1.3}h3{margin:0 0 8px}p{margin:0 0 12px}p:last-child{margin-bottom:0}.notice{background:#fff7e6;border-left:5px solid var(--amber)}.meta,.cards{display:grid;gap:12px}.meta{grid-template-columns:repeat(4,1fr);list-style:none;margin:0;padding:0}.meta li,.card{padding:14px;border:1px solid var(--line);border-radius:8px;background:#f7f9fc}.meta strong{display:block;color:var(--muted);font-size:.84rem}.cards{grid-template-columns:repeat(3,1fr)}ul{margin:0;padding-left:1.25rem}li+li{margin-top:7px}footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);background:#fff}@media(max-width:820px){.hero-grid,.meta,.cards{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start;padding:14px 0}.nav a:not(.brand){margin:0 14px 0 0}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><nav class="wrap nav"><a class="brand" href="../../">Aaron Hunter</a><div><a href="../../">首頁</a><a href="#sources">來源</a></div></nav></header>
+  <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Windows Codex Weekly · 2026-10-17</p><h1>0.163.0 與 Windows 操作改善</h1><p class="hero-copy">本週以 Anysearch 的 week 範圍搜尋 Windows Codex 繁體中文文章、貼文、討論與技術分享；再以 openai/codex 的官方 release 核實版本資訊，整理成偏重企業 Windows 管理情境的紀錄。</p></div><img src="./preview.png" alt="Windows Codex 每週觀察預覽圖"></div></section>
+  <main class="wrap"><article>
+    <section><ul class="meta"><li><strong>搜尋工具</strong>Anysearch skill</li><li><strong>搜尋範圍</strong>過去一週</li><li><strong>執行日期</strong>2026-10-17</li><li><strong>資料語言</strong>繁體中文優先</li></ul></section>
+    <section class="notice"><h2>本週觀察重點</h2><p>過去一週內可整理的繁體中文 Windows Codex 資料有限。本次搜尋能找到 OpenAI 繁中 Codex 產品頁、Microsoft Store 的繁中 Windows 安裝入口，以及少量社群貼文；可作為本週具時效性的核心技術事實，仍以官方 GitHub release 為準。</p><p>官方 release 顯示 Codex CLI 0.163.0 於 10 月 15 日成為 latest。本版將回應中的追問改為可立即轉向、加入可搜尋的 <code>/config</code>、可重啟 managed background server，並可平行執行相互獨立的唯讀工具。Windows 端另明確修正文字與圖片貼上行為。</p></section>
+    <section><h2>搜尋結果整理</h2><div class="cards"><div class="card"><h3>繁中官方入口</h3><p>Anysearch 找到 OpenAI 的繁中 Codex 產品頁，定位為處理實際工程工作、除錯、重構與新功能的程式碼代理；Microsoft Store 繁中頁則提供 Windows 下載入口與系統需求資訊。</p></div><div class="card"><h3>社群討論訊號</h3><p>搜尋結果有繁中 Threads 貼文談 Windows App 與 CLI 的文字編碼問題，也有繁中字幕／教學分享；但多數不是本週新內容，僅能反映使用者關注的語系與工作流痛點。</p></div><div class="card"><h3>可核實版本變更</h3><p>官方 GitHub release 直接列出 0.163.0 的功能與修正，並標示其為 latest；同頁另可見 0.164.0 alpha 系列，屬預發版，不能視為企業正式部署建議。</p></div></div></section>
+    <section><h2>Windows Codex 相關消息摘要</h2><ul><li><strong>0.163.0 正式版：</strong>可在 Codex 回應期間送出追問以立即引導方向；中斷回應也會停止 active Code Mode cells 與其巢狀工具呼叫。</li><li><strong>設定與背景服務：</strong><code>/config</code> 可搜尋偏好設定、立即調整支援選項並顯示是否需重啟；<code>/daemon</code> 可重啟 managed background server，且會提示可能被中斷的工作。</li><li><strong>Windows 剪貼簿：</strong>官方修正指出 Windows 的 <code>Ctrl+V</code> 與 <code>Shift+Insert</code> 可貼上文字及圖片。對需要貼上事件紀錄、螢幕截圖或 PowerShell 輸出的排障流程很直接。</li><li><strong>權限與網路：</strong>恢復既有 thread 時會還原其 permissions 與 network approvals，但仍遵守明確覆寫與現行 managed policy；網路 proxy 也改為 DNS lookup 前先檢查權限，並阻擋重複 Host header。</li><li><strong>預發版界線：</strong>release 頁雖可見 0.164.0-alpha 系列，但它們明確標為 pre-release，企業測試與正式環境應與 stable 版分開管理。</li></ul></section>
+    <section><h2>對 MIS / Windows 使用者的影響</h2><p>對 MIS 而言，立即轉向與背景服務重啟不是單純介面功能：它會影響工作是否可被中止、如何留存任務狀態，以及服務執行中的變更管控。若團隊採用 Codex 協助維護 PowerShell、IIS 或 GitHub Pages，應把「可中斷」和「有 diff 可審」視為流程的一部分。</p><p>Windows 剪貼簿修正可降低貼上文字與截圖的摩擦，但也提醒我們：若貼上內容含內部主機名、帳號、log 或設定檔，仍須依公司資料分類與工具 policy 處理。功能更方便，不代表敏感資料的界線可以放寬。</p></section>
+    <section><h2>值得注意的地方</h2><ul><li>本週繁中第一手技術內容不足，實作決策應回到官方 release、產品說明與實際測試，不應把搜尋摘要或社群貼文當作正式相容性保證。</li><li>若受 GPO、端點防護、Proxy、受限網路或非互動帳號限制，先在測試機驗證 Codex 的 sandbox、network approval、背景服務與剪貼簿流程。</li><li>建議將 stable 與 alpha 版分流：alpha 只用於隔離測試，並記錄版本、權限設定、政策差異與可重現的回退方法。</li></ul></section>
+    <section><h2>我的實務看法</h2><p>這週最值得注意的是 Codex 正在把「長時間、可被管理的代理工作」補齊：中途導向、設定搜尋、背景服務處理、唯讀工具平行化，以及 Windows 的實際輸入體驗都往同一個方向走。對企業 Windows 環境，這比單一模型能力宣傳更具落地價值。</p><p>我的做法仍會保守：先限定工作區與任務，例如文件、測試或低風險修補；要求先檢視 diff 再提交；由受控帳號與最小權限執行；把安裝、版本與 network approval 設成可追查項目。這能讓效率提升不以可稽核性為代價。</p></section>
+    <section><h2>結論</h2><p>Windows Codex 本週的繁中可用資料不多，但官方 0.163.0 已帶來可核實的工作流與 Windows 操作改善。MIS 團隊可把它視為值得安排測試的 stable 更新，而非直接全員推送的理由；先驗證權限、網路、背景服務與資料邊界，才是較穩健的導入節奏。</p></section>
+    <section id="sources"><h2>來源與搜尋紀錄</h2><ul><li>Anysearch week search：Windows Codex 繁體中文。</li><li>Anysearch week search：Windows Codex 台灣 OR 香港 OR zh-Hant。</li><li>Anysearch week search：OpenAI Codex Windows 繁體中文 討論。</li><li>Anysearch week search：Codex CLI Windows 更新 Windows。</li><li>Anysearch extract：<a href="https://github.com/openai/codex/releases">openai/codex releases</a>，確認 0.163.0 的發布時間、功能與 Windows clipboard 修正。</li><li><a href="https://openai.com/zh-Hant/codex/">OpenAI Codex 繁中產品頁</a></li><li><a href="https://apps.microsoft.com/detail/9plm9xgg6vks?hl=zh-TW">Microsoft Store：ChatGPT Windows</a></li></ul></section>
+  </article></main>
+  <footer><div class="wrap">© 2026 Aaron Hunter. Windows Codex weekly note.</div></footer>
+</body>
+</html>
