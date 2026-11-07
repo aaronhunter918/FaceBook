@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Windows Codex 每週觀察：0.167.0、系統 Proxy 與受管網路</title>
+  <meta name="description" content="使用 Anysearch 搜尋 2026-11-01 至 2026-11-07 的繁體中文 Windows Codex 資料，並以官方 release 核實 Codex CLI 0.167.0 的 Windows 導入重點。">
+  <meta property="og:title" content="Windows Codex 每週觀察：0.167.0、系統 Proxy 與受管網路">
+  <meta property="og:description" content="繁中資料有限；以 Anysearch 與官方 release 整理 Codex CLI 0.167.0 對 Windows 與企業網路的影響。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-11-07-windows-codex-weekly/">
+  <meta property="og:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-11-07-windows-codex-weekly/preview.png">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Windows Codex 每週觀察預覽圖">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Windows Codex 每週觀察：0.167.0、系統 Proxy 與受管網路">
+  <meta name="twitter:description" content="Anysearch 過去一週搜尋與官方 release 核實的 MIS 技術紀錄。">
+  <meta name="twitter:image" content="https://aaronhunter918.github.io/FaceBook/Posts/2026-11-07-windows-codex-weekly/preview.png">
+  <style>
+    :root{--bg:#f4f7fb;--ink:#172033;--muted:#617089;--panel:#fff;--line:#d7deea;--blue:#1f6feb;--cyan:#0f9fba;--amber:#b7791f}*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.76}a{color:#124ba0;text-underline-offset:3px}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}.topbar{position:sticky;top:0;z-index:5;background:#fffffff0;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:18px}.brand{font-weight:800;color:var(--ink);text-decoration:none}.nav a:not(.brand){margin-left:16px;text-decoration:none;font-weight:700;color:var(--muted)}.hero{padding:56px 0 38px;color:#fff;background:#172033}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}.eyebrow{color:#bfefff;font-weight:800}.hero h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.08;margin:8px 0}.hero-copy{color:#d9e8f6;font-size:1.08rem}.hero img{width:100%;display:block;border-radius:8px;box-shadow:0 18px 42px #0005}main{padding:36px 0 64px}article{display:grid;gap:20px}section{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 30px #14264612}h2{margin:0 0 12px;font-size:1.45rem;line-height:1.3}h3{margin:0 0 8px}p{margin:0 0 12px}p:last-child{margin-bottom:0}.notice{background:#fff7e6;border-left:5px solid var(--amber)}.meta,.cards{display:grid;gap:12px}.meta{grid-template-columns:repeat(4,1fr);list-style:none;margin:0;padding:0}.meta li,.card{padding:14px;border:1px solid var(--line);border-radius:8px;background:#f7f9fc}.meta strong{display:block;color:var(--muted);font-size:.84rem}.cards{grid-template-columns:repeat(3,1fr)}ul{margin:0;padding-left:1.25rem}li+li{margin-top:7px}footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);background:#fff}@media(max-width:820px){.hero-grid,.meta,.cards{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start;padding:14px 0}.nav a:not(.brand){margin:0 14px 0 0}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><nav class="wrap nav"><a class="brand" href="../../">Aaron Hunter</a><div><a href="../../">首頁</a><a href="#sources">來源</a></div></nav></header>
+  <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Windows Codex Weekly · 2026-11-07</p><h1>0.167.0、系統 Proxy 與受管網路</h1><p class="hero-copy">本週以 Anysearch 的 week 範圍檢索 Windows Codex 繁體中文文章、貼文、討論與技術分享；版本功能只採官方 openai/codex release，聚焦 Windows 系統 Proxy、終端操作與企業網路治理。</p></div><img src="./preview.png" alt="Windows Codex 每週觀察預覽圖"></div></section>
+  <main class="wrap"><article>
+    <section><ul class="meta"><li><strong>搜尋工具</strong>Anysearch skill</li><li><strong>搜尋範圍</strong>過去一週</li><li><strong>執行日期</strong>2026-11-07</li><li><strong>資料語言</strong>繁體中文優先</li></ul></section>
+    <section class="notice"><h2>本週觀察重點</h2><p>過去一週內可整理的繁體中文 Windows Codex 資料有限。Anysearch 可找到繁中產品頁、Windows 安裝與社群討論，但缺少足以單獨確認本週功能變更的繁中第一手資料；本文因此以 Anysearch 擷取的 <a href="https://github.com/openai/codex/releases">openai/codex releases</a> 作為版本依據。</p><p>官方 release 顯示正式版 <strong>Codex CLI 0.167.0</strong> 於 11 月 6 日發布；同頁的 0.168.0-alpha.7 與 0.169.0-alpha.2 都是 pre-release。Windows 端最直接的訊號是可在 <code>/experimental</code> 選用系統 Proxy 設定；同版亦補強受管網路規則與互動中的修補檢視。</p></section>
+    <section><h2>搜尋結果整理</h2><div class="cards"><div class="card"><h3>繁中資料訊號</h3><p>Anysearch 找到 OpenAI 繁中 Codex 產品頁、Microsoft Store 的繁中 Windows 安裝入口，以及中文社群的安裝、Proxy 設定討論。這反映 Windows 使用需求存在，但不足以替代正式 release note。</p></div><div class="card"><h3>官方版本依據</h3><p>Anysearch 擷取 GitHub release，確認 0.167.0 為 latest，發布於 11 月 6 日；其後的 0.168.0-alpha.7、0.169.0-alpha.2 明確標為 pre-release，不能混入正式部署基線。</p></div><div class="card"><h3>企業環境焦點</h3><p>系統 Proxy 選用、受管網路條件、人工核准規則與同一端點的連線提示序列化，都是企業 Windows 導入前要拿實際帳號、網段與政策驗證的項目。</p></div></div></section>
+    <section><h2>Windows Codex 相關消息摘要</h2><ul><li><strong>0.167.0 正式版：</strong>官方標示為 latest。可用 <code>codex agents --no-daemon</code> 開啟 agent command center；終端 session picker 可在已連接後端間切換並保留草稿。</li><li><strong>Windows 系統 Proxy：</strong>在 <code>/experimental</code> 中可選擇使用 macOS 或 Windows 的系統 Proxy 設定。這是「可選用」能力，不代表所有 PAC、TLS 攔截、整合式驗證或服務帳號情境已自動相容。</li><li><strong>本機圖片附件：</strong>支援的終端可在撰寫時預覽本機圖片附件，也可從可點擊的 transcript 路徑開啟已檢視圖片；這對需要看截圖、錯誤畫面或操作證據的 Windows 技術流程較實用。</li><li><strong>受管網路與人工核准：</strong>app-server README 補充 <code>[permissions.network]</code> 的受管網路限制，以及需要重新由人員核准的 <code>prompt-user</code> command rule；網路核准提示會在請求結束後關閉，同一端點的同時請求則逐一提示。</li><li><strong>正式／預發版邊界：</strong>0.168.0-alpha.7、0.169.0-alpha.2 是 pre-release。正式環境仍應固定 0.167.0，先完成測試、記錄與回退設計。</li></ul></section>
+    <section><h2>對 MIS / Windows 使用者的影響</h2><p>系統 Proxy 選項讓桌面端採用既有 Windows 網路設定的路徑更清楚，尤其適合先在使用者帳號的受控端點驗證。但 SCCM、工作排程與服務帳號往往不具備相同使用者設定；PAC、WinHTTP Proxy、瀏覽器 Proxy 和環境變數也可能不同，不能用互動式成功結果推論背景執行一定可行。</p><p>受管網路和重新人工核准的規則，讓 IT 可以將「哪些網域可連、哪些操作要再確認」寫進可審查的流程。建議把這些規則與既有防火牆、代理、端點防護和變更管理一起盤點，保留拒絕與逾時的 log，才有能力釐清連線失敗是工具、網路還是政策所致。</p></section>
+    <section><h2>值得注意的地方</h2><ul><li>本文已揭露本週繁中第一手技術資料有限；社群與第三方安裝教學僅作為需求訊號，不用來宣稱版本功能或企業相容性。</li><li>「系統 Proxy」不是單一設定的同義詞。應分別驗證使用者互動、SYSTEM、排程與遠端工作階段，且不要在測試紀錄中留下 Proxy 密碼或存取權杖。</li><li>本機圖片預覽提高操作效率，也可能使截圖中的帳號、內網名稱或機密內容進入工作脈絡；導入時應先建立脫敏與可上傳資料的規範。</li><li>Alpha 版本只應在隔離環境驗證。保留 stable 安裝包、設定快照、測試記錄與可復原版本，避免問題發生時只剩「更新看看」。</li></ul></section>
+    <section><h2>我的實務看法</h2><p>本週最有價值的不是多一個指令，而是 0.167.0 讓 Windows 現場的兩件事更可操作：沿用系統 Proxy 的能力，以及把網路／人工核准條件明文化。對 MIS 而言，這正好把導入重心從「能不能安裝」移到「是否能被控制、記錄與回復」。</p><p>我的建議順序是：固定 0.167.0 與受信任安裝來源，選一台測試 Windows 端點，在一般使用者帳號下驗證 HTTPS、WebSocket 與系統 Proxy；再另測 SYSTEM 或排程情境。接著以低風險、可審查的工作區試行圖片附件與權限提示。若代理驗證、核准紀錄與回退都過關，再考慮擴大使用範圍。</p></section>
+    <section><h2>結論</h2><p>過去一週雖缺少大量繁中 Windows Codex 第一手報導，但官方 0.167.0 提供了明確的企業導入訊號：可選用 Windows 系統 Proxy、強化受管網路與人工核准的說明，並改善終端的本機圖片工作流。對 MIS 團隊，下一步應是分情境驗證帳號、Proxy、網路政策與資料處理邊界，而不是直接把正式版推向所有端點。</p></section>
+    <section id="sources"><h2>來源與搜尋紀錄</h2><ul><li>Anysearch week search：Windows Codex 繁體中文。</li><li>Anysearch week search：Windows Codex 台灣 OR 香港 OR zh-Hant。</li><li>Anysearch week search：OpenAI Codex Windows 更新。</li><li>Anysearch week search：site:github.com/openai/codex releases Windows Codex。</li><li>Anysearch extract：<a href="https://github.com/openai/codex/releases">openai/codex releases</a>，確認 0.167.0 latest、發布日期、系統 Proxy、圖片附件與受管網路相關變更。</li><li><a href="https://openai.com/zh-Hant/codex/">OpenAI Codex 繁中產品頁</a>。</li></ul></section>
+  </article></main>
+  <footer><div class="wrap">© 2026 Aaron Hunter. Windows Codex weekly note.</div></footer>
+</body>
+</html>
